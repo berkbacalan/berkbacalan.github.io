@@ -1,34 +1,315 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
-    <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
-    <link rel="stylesheet" href="style.css">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
     <title>Berk Bacalan</title>
-  </head>
-  <body>
-    <div class="navbar">
-        <ul>
-            <li><a href="index.html" class="active" style="font-weight: bold; font-family: monospace; color: #000;">Home</a></li>
-            <li><a href="about.html" style="font-family: monospace; font-weight: bold; color: #000;">About Me</a></li>
-            <li><a href="products.html" style="font-family: monospace; color: #000; font-weight: bold;">Products</a></li>
-        </ul>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body style="
+      /* background-image: url('bg3.jpeg'); */
+      background-color: #495057;
+      /* background-size: 100% 100%; */
+    ">
+    <div id="home" class="container d-flex align-items-center" style="height: 100vh">
+        <!-- <nav class="navbar navbar-dark fixed-top"> -->
+        <nav class="navbar navbar-expand-md bg-dark border-bottom fixed-top" data-bs-theme="dark">
+            <div class="container">
+                <!-- <a class="navbar-brand d-md-none" href="#">
+                <svg class="bi" width="24" height="24"><use xlink:href="#aperture"/></svg>
+                Aperture
+              </a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                    aria-controls="#offcanvas" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="#offcanvas" aria-labelledby="#offcanvasLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="#offcanvasLabel">Aperture</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav flex-grow-1 justify-content-between">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <svg class="bi" width="24" height="24">
+                                        <use xlink:href="#aperture" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">About Me</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#products">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#mobile">Mobile Development</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#webproject">Web Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#whyworkme">Why Work With Me</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <svg class="bi" width="24" height="24">
+                                        <use xlink:href="#cart" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container text-center">
+            <div class="row-6">
+                <div class="p-5 text-center rounded-3">
+                    <use xlink:href="#bootstrap" />
+                    </svg>
+                    <h1 class="text-white">Hi, I'm Berk Bacalan 👋</h1>
+                    <p class="col-lg-8 mx-auto fs-5 text-white">
+                        I help designers, small agencies and businesses bring their ideas
+                        to life. Powered by Django, .Net, Flutter and coffee, I turn your
+                        requirements into CMS-ified and ecommerce-ified websites - on
+                        time⌛️ and on budget💰.
+                    </p>
+                    <p class="col-lg-8 mx-auto fs-5 text-white">
+                        I also work on monoliths, micro-services and serverless solutions.
+                    </p>
+                    <p class="col-lg-8 mx-auto fs-5 text-white">
+                        Got any questions?&nbsp;<br /><a class="link-warning"
+                            href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=berkbacalan@gmail.com&body=Hello Berk,"
+                            target="_blank">Contact Me</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row-4 d-flex justify-content-center align-content-center row text-white text-center">
+                <p class="card-title h4 mb-3">My Tech Stack</p>
+                <div class="row">
+                    <div class="col">
+                        <i class="devicon-django-plain-wordmark h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-dotnetcore-plain h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-python-plain-wordmark h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-html5-plain-wordmark h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-postgresql-plain-wordmark h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-flutter-plain h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-android-plain-wordmark h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-apple-original h1"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <i class="devicon-firebase-plain-wordmark h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-unity-original-wordmark h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-mongodb-plain-wordmark h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-amazonwebservices-plain-wordmark h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-googlecloud-plain-wordmark h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-apachekafka-original-wordmark h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-javascript-plain h1"></i>
+                    </div>
+                    <div class="col">
+                        <i class="devicon-csharp-plain-wordmark h1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="center-box-no-border">
-        <h2 align="center" style="font-family: monospace; font-size: 200%">
-            Hi, I'm Berk Bacalan 👋
-        </h2>
-        <p align="center" style="font-family: monospace; font-weight: bold; font-size: 120%;">I help designers, small agencies and businesses bring their ideas to life. 
-            Powered by Django, VS Code and coffee, I turn your requirements into CMS-ified and ecommerce-ified websites -
-             on time and
-             on budget.</p><br>
-        <p align="center" style="font-family: monospace; font-weight: bold; font-size: 120%;">
-            I work on monoliths, micro-services and serverless solutions.
-        </p>
-        <p align="center" style="font-family: monospace; font-weight: bold; font-size: 120%;">
-            Got any questions?&nbsp;<a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=berkbacalan@gmail.com&body=Hello Berk,">Contact Me</a>
-        </p>
+    <!-- </div> -->
+    <div id="about" class="container" style="height: 100vh">
+        <br /><br /><br />
+        <div class="row d-flex justify-content-center">
+            <div class="w-25 center">
+                <img src="profile.jpeg" alt="..." class="img-fluid img-thumbnail rounded-5" />
+            </div>
+        </div>
+        <br /><br />
+        <div class="row text-white text-center d-flex justify-content-center">
+            <h1 style="font-family: monospace">Berk Bacalan</h1>
+        </div>
+        <div class="row text-white text-center d-flex justify-content-center">
+            <h4 style="font-family: monospace">Web&Mobile Developer</h4>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="row text-white text-center">
+                <p style="font-family: monospace">
+                    Hi, My name is Berk Bacalan. I am a software engineer experienced in
+                    back end development. I am currently working as a professional
+                    software engineer. I also develop mobile applications and games
+                    individually with Flutter. Every day I work on new and simple
+                    applications that solve people's problems. If you have used any of
+                    these applications, do not hesitate to give feedback. You may also
+                    reach me about your projects.
+                </p>
+            </div>
+            <div class="text-white text-center">
+                <a href="https://www.linkedin.com/in/berkbacalan"><i class="bi bi-linkedin text-white m-5 h1"
+                        aria-hidden="true"></i></a>
+                <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=berkbacalan@gmail.com&body=Tell me good things..."><i
+                        class="bi bi-envelope text-white h1"></i></a>
+            </div>
+        </div>
     </div>
+    <div id="products" class="container text-white text-center d-flex align-items-center" style="height: 100vh">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="row container">
+                <div class="col container">
+                    <h3 style="font-family: monospace;">
+                        [Utilization, Efficiency]
+                    </h3>
+                    <h1 style="font-family: monospace">AnyScanner</h1>
+                    <h5 style="font-family: monospace">
+                        You can scan an area or surface in any image, both as an image and
+                        as a PDF document. AnyScanner" also allows you to read QR and
+                        barcodes.
+                    </h5>
+                    <a href="https://apps.apple.com/us/app/anyscanner/id1658302219"
+                        style="text-decoration: none; font-size: xx-large" class="bi bi-apple text-white"></a>
+                    <p>Play Store Coming Soon...</p>
+                    <a href="anyscanner-terms.html" class="font-monospace text-info">Terms&Conditions</a>
+                    <br />
+                    <a href="anyscanner-pp.html" class="font-monospace text-info">Privacy Policy</a>
+                </div>
+                <div class="col container">
+                    <h3 style="font-family: monospace;">[Game]</h3>
+                    <h1 style="font-family: monospace">WorDict</h1>
+                    <h5 class="font-monospace">
+                        WorDict is a word game without internet usage. You may try to find
+                        words according to its meanings. WorDict is completely free.
+                    </h5>
+                    <a href="https://play.google.com/store/apps/details?id=com.berkbacalan.wordgame"
+                        class="bi bi-android2 text-white h1"></a>
+                    &nbsp;
+                    <a href="https://apps.apple.com/az/app/word-game-kelime-bilgisi/id1616335539"
+                        class="bi bi-apple text-white h1"></a><br /><br />
+                    <a href="wordict-terms.html" class="font-monospace text-info">Terms&Conditions</a><br />
+                    <a href="wordict-pp.html" class="font-monospace text-info">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobile" class="container text-white white" style="height: 100vh">
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+            <div class="col-md-6 p-lg-5 mx-auto my-5">
+                <h2 class="display-3 fw-bold font-monospace">
+                    <p class="text-danger">Think</p>
+                    <p class="text-warning">Imagine</p>
+                    <p class="text-success">Build</p>
+                </h2>
+                <h3 class="fw-normal mb-3 text-white">
+                    Bringing a startup to life, bringing an idea to life and reaching millions of people has never been
+                    easier.
+                    The value you generate is accessible from anywhere in the world.
+                    You may have an amazing idea. Let's work together to bring it to life.
+                    I implement high-performance, multi-platform applications with Flutter.
+                    Let's plan your dream applications according to your budget.
+                </h3>
+                <div class="d-flex gap-3 justify-content-center lead fw-normal">
+                    <a class="link text-info" href="#about">
+                        Reach me about your project
+                        <svg class="bi">
+                            <use xlink:href="#chevron-right"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        </div>
+    </div>
+
+    <div id="webproject" class="container text-white white d-flex justify-content-center align-items-center" style="height: 100vh">
+        <div class="p-3 text-center">
+            <div class="col-md-6 p-lg-5 mx-auto my-5">
+                <h2 class="display-6 fw-bold font-monospace">
+                    Let's bring to life whatever you need about the web. 
+                </h2><br>
+                <h3 class="display-9 fw-bold font-monospace">
+                    Blog, Portflio, e-Commerce etc.
+                </h3><br><br>
+                <h3 class="fw-normal mb-3 text-white">
+                    Fast production ✅<br>
+                    Responsive design ✅<br>
+                    Budget friendly ✅<br>
+                </h3>
+                <div class="d-flex justify-content-center lead fw-normal">
+                    <a class="link text-info" href="#about">
+                        Reach me about your project
+                        <svg class="bi">
+                            <use xlink:href="#chevron-right"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="whyworkme" class="container text-white white d-flex justify-content-center align-items-center" style="height: 100vh">
+        <div class="p-3 text-center">
+            <div class="mx-auto my-5">
+                <h2 class="display-6 fw-bold font-monospace">
+                    Why work with me?
+                </h2><br>
+                <h3 class="display-9 fw-bold font-monospace">
+                    Good question.
+                </h3><br>
+                <h3 class="fw-normal mb-3 text-white">
+                    Because I take <p class="text-success">ownership</p>
+                    Because I work <p class="text-success">fast</p>
+                    Because I always <p class="text-success">test</p>
+                    Because I follow <p class="text-success">best practices</p>
+                    Because I <p class="text-success">best practices</p>
+                </h3>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
