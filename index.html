@@ -3,243 +3,472 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
-    <title>Berk Bacalan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Berk Bacalan - Senior Software Engineer</title>
     <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #4f46e5;
+            --accent-color: #06b6d4;
+            --background-color: #f8fafc;
+            --text-color: #1e293b;
+            --gradient-start: #6366f1;
+            --gradient-end: #06b6d4;
+        }
+        
         html {
             scroll-behavior: smooth;
         }
+        
         body {
-            background-color: #495057;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.98) !important;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            background-color: var(--primary-color);
+            color: white !important;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.5rem 1.2rem;
+            margin: 0 0.3rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-dark .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: none;
+            position: relative;
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler-icon::before {
+            transform: translateY(-8px);
+        }
+
+        .navbar-toggler-icon::after {
+            transform: translateY(8px);
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+            background-color: transparent;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+            transform: rotate(45deg);
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+            transform: rotate(-45deg);
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: white;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: white;
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--primary-color);
+        }
+
+        .tech-stack-icon {
+            font-size: 2.5rem;
+            margin: 10px;
+            color: var(--text-color);
+        }
+
+        .card {
+            background: white;
+            border: none;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+            border-radius: 12px;
+            padding: 1.5rem !important;
+            background: var(--background-color);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 1.5rem 0 0 0;
+        }
+
+        .card h3 {
+            color: var(--text-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .card-text {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <div id="home" class="container d-flex align-items-center" style="min-height: 100vh; padding-top: 56px;">
-        <nav class="navbar navbar-expand-md bg-dark border-bottom fixed-top mb-5 text-center" data-bs-theme="dark">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuItems" aria-controls="menuItems" aria-expanded="false" aria-label="Toggle Navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="menuItems">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#mobile">Mobile Development</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#webproject">Web Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#whyworkme">Why Work With Me</a></li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg class="bi" width="24" height="24">
-                                    <use xlink:href="#cart" />
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Hi, I'm Berk Bacalan</h1>
+                    <h2 class="h3 mb-4">Senior Software Development Engineer</h2>
+                    <p class="lead mb-4">
+                        Experienced software engineer specializing in backend development, microservices architecture, 
+                        and cloud solutions. Currently working at TOM Digital Bank, leading digital onboarding initiatives 
+                        and third-party integrations.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-light btn-lg">Get in Touch</a>
+                        <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="profile.jpeg" alt="Berk Bacalan" class="img-fluid rounded-circle" style="max-width: 300px;">
                 </div>
             </div>
-        </nav>
-        <div class="container text-center">
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Professional Experience</h2>
             <div class="row">
-                <div class="col">
-                    <div class="p-5 text-center rounded-3">
-                        <h1 class="text-white">Hi, I'm Berk Bacalan 👋</h1>
-                        <p class="col-lg-8 mx-auto fs-5 text-white">
-                            I help designers, small agencies and businesses bring their ideas to life. Powered by Django, .Net, Flutter and coffee, I turn your requirements into CMS-ified and ecommerce-ified websites - on time⌛️ and on budget💰.
-                        </p>
-                        <p class="col-lg-8 mx-auto fs-5 text-white">
-                            I also work on monoliths, micro-services and serverless solutions.
-                        </p>
-                        <p class="col-lg-8 mx-auto fs-5 text-white">
-                            Got any questions?&nbsp;<br /><a class="link-warning" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=berkbacalan@gmail.com&body=Hello Berk," target="_blank">Contact Me</a>
-                        </p>
+                <div class="col-lg-6 mb-4">
+                    <div class="experience-card">
+                        <h3>Senior Software Development Engineer</h3>
+                        <h4 class="text-primary">TOM Digital Bank A.Ş.</h4>
+                        <ul>
+                            <li>Leading digital onboarding team for customer acquisition</li>
+                            <li>Managing third-party legal office integrations</li>
+                            <li>Implementing Kibana enhancements for monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="experience-card">
+                        <h3>Senior Software Development Engineer</h3>
+                        <h4 class="text-primary">thecodebase.io</h4>
+                        <ul>
+                            <li>Led e-commerce platform development using DDD and CQRS</li>
+                            <li>Built core modules with ASP.NET and PostgreSQL</li>
+                            <li>Implemented high-quality testing practices</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="experience-card">
+                        <h3>Software Engineer ICII</h3>
+                        <h4 class="text-primary">Delivery Hero (Talabat)</h4>
+                        <ul>
+                            <li>Contributed to Subscription domain with 150k throughput and 99.8% SLO</li>
+                            <li>Optimized .NET microservices using ASP.NET Core, Kafka, PostgreSQL</li>
+                            <li>Implemented monitoring with NewRelic, Datadog, and Sentry</li>
+                            <li>Utilized AWS and GCP for serverless architectures</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="experience-card">
+                        <h3>Software Engineer - Backend</h3>
+                        <h4 class="text-primary">Getir</h4>
+                        <ul>
+                            <li>Developed microservices for GetirCar using AWS Lambda and FastAPI</li>
+                            <li>Automated data operations with MongoDB, Redshift, and Airflow</li>
+                            <li>Created REST APIs with Django and FastAPI</li>
+                            <li>Monitored services via Sentry, Rancher, and Kubernetes</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="row text-white text-center">
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-django-plain-wordmark" style="font-size: 3rem;"></i>
+        </div>
+    </section>
+
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Technical Skills</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <h3 class="h5 mb-3">Backend Development</h3>
+                        <div class="d-flex flex-wrap">
+                            <i class="devicon-dotnetcore-plain tech-stack-icon"></i>
+                            <i class="devicon-python-plain tech-stack-icon"></i>
+                            <i class="devicon-java-plain tech-stack-icon"></i>
+                            <i class="devicon-csharp-plain tech-stack-icon"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-dotnetcore-plain" style="font-size: 3rem;"></i>
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <h3 class="h5 mb-3">Cloud & DevOps</h3>
+                        <div class="d-flex flex-wrap">
+                            <i class="devicon-amazonwebservices-plain tech-stack-icon"></i>
+                            <i class="devicon-googlecloud-plain tech-stack-icon"></i>
+                            <i class="devicon-docker-plain tech-stack-icon"></i>
+                            <i class="devicon-kubernetes-plain tech-stack-icon"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-python-plain-wordmark" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-html5-plain-wordmark" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-postgresql-plain-wordmark" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-flutter-plain" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-android-plain-wordmark" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-apple-original" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-firebase-plain-wordmark" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-unity-original-wordmark" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-mongodb-plain-wordmark" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-amazonwebservices-plain-wordmark" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-googlecloud-plain-wordmark" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-apachekafka-original-wordmark" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-javascript-plain" style="font-size: 3rem;"></i>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <i class="devicon-csharp-plain-wordmark" style="font-size: 3rem;"></i>
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <h3 class="h5 mb-3">Mobile Development</h3>
+                        <div class="d-flex flex-wrap">
+                            <i class="devicon-flutter-plain tech-stack-icon"></i>
+                            <i class="devicon-android-plain tech-stack-icon"></i>
+                            <i class="devicon-apple-original tech-stack-icon"></i>
+                            <i class="devicon-firebase-plain tech-stack-icon"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id="about" class="container text-center" style="min-height: 100vh;">
-        <div class="row justify-content-center">
-    <div class="col-12 col-md-6 d-flex justify-content-center">
-        <img src="profile.jpeg" alt="..." class="img-fluid img-thumbnail rounded-5" style="max-width: 150px;" />
-    </div>
-</div>
-        <div class="row text-white text-center justify-content-center mt-4">
-            <h1 style="font-family: monospace">Berk Bacalan</h1>
-            <h4 style="font-family: monospace">Web&Mobile Developer</h4>
-            <p style="font-family: monospace">
-                Hi, My name is Berk Bacalan. I am a senior software engineer experienced in back end development. I am currently working as a professional software engineer. I also develop mobile applications and games individually with Flutter. Every day I work on new and simple applications that solve people's problems. If you have used any of these applications, do not hesitate to give feedback. You may also reach me about your projects.
-            </p>
-            <div>
-                <a href="https://www.linkedin.com/in/berkbacalan"><i class="bi bi-linkedin text-white m-5 h1" aria-hidden="true"></i></a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=berkbacalan@gmail.com&body=Tell me good things..."><i class="bi bi-envelope text-white h1"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div id="products" class="container text-center text-white" style="min-height: 100vh;">
-        <div class="row align-items-stretch justify-content-center">
-            <div class="col-12 col-md-4 mb-4 d-flex align-items-stretch">
-                <div class="w-100">
-                    <h5 style="font-family: monospace">[Utilization, Efficiency]</h5>
-                    <img class="rounded-5 img-fluid mb-3" src="https://is5-ssl.mzstatic.com/image/thumb/Purple126/v4/6e/e0/4c/6ee04c6c-8166-a40c-68b3-2f34c8bad49b/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png" alt="" style="max-height: 200px;">
-                    <h1 style="font-family: monospace">AnyScanner</h1>
-                    <h5 style="font-family: monospace">You can scan an area or surface in any image, both as an image and as a PDF document. AnyScanner also allows you to read QR and barcodes.</h5>
-                    <a href="https://apps.apple.com/us/app/anyscanner/id1658302219" style="text-decoration: none; font-size: xx-large" class="bi bi-apple text-white"></a>
-                    <p>Play Store Coming Soon...</p>
-                    <a href="anyscanner-terms.html" class="font-monospace text-info">Terms&Conditions</a><br />
-                    <a href="anyscanner-pp.html" class="font-monospace text-info">Privacy Policy</a>
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Featured Projects</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple126/v4/6e/e0/4c/6ee04c6c-8166-a40c-68b3-2f34c8bad49b/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png" class="card-img-top" alt="AnyScanner">
+                        <div class="card-body">
+                            <h3>AnyScanner</h3>
+                            <p class="card-text">Document scanning app with QR/barcode support, used by 20,000+ users.</p>
+                            <a href="https://apps.apple.com/us/app/anyscanner/id1658302219" class="btn btn-primary">View on App Store</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4 d-flex align-items-stretch">
-                <div class="w-100">
-                    <h5 style="font-family: monospace">[Utilization, Efficiency]</h5>
-                    <img class="rounded-5 img-fluid mb-3" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f6/84/31/f6843173-656a-e72b-87ff-e89ad17dd99a/AppIcon-0-0-1x_U007emarketing-0-10-0-0-85-220.png/246x0w.png" alt="" style="max-height: 200px;">
-                    <h1 style="font-family: monospace">AnyScanner Pro</h1>
-                    <h5 style="font-family: monospace">Better, faster, more user-friendly. Next gen of AnyScanner. + Premium options without ads.</h5>
-                    <a href="https://apps.apple.com/tr/app/anyscanner-pro/id6502211573" style="text-decoration: none; font-size: xx-large" class="bi bi-apple text-white"></a>
-                    <p>Play Store Coming Soon...</p>
-                    <a href="anyscanner-terms.html" class="font-monospace text-info">Terms&Conditions</a><br />
-                    <a href="anyscanner-pro-pp.html" class="font-monospace text-info">Privacy Policy</a>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f6/84/31/f6843173-656a-e72b-87ff-e89ad17dd99a/AppIcon-0-0-1x_U007emarketing-0-10-0-0-85-220.png/246x0w.png" class="card-img-top" alt="AnyScanner Pro">
+                        <div class="card-body">
+                            <h3>AnyScanner Pro</h3>
+                            <p class="card-text">Premium document scanning solution with advanced features.</p>
+                            <a href="https://apps.apple.com/tr/app/anyscanner-pro/id6502211573" class="btn btn-primary">View on App Store</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4 d-flex align-items-stretch">
-                <div class="w-100">
-                    <h5 style="font-family: monospace">[Game]</h5>
-                    <img class="rounded-5 img-fluid mb-3" src="https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/ba/33/5f/ba335f63-9833-347b-44f5-895b5a43d550/AppIcon-1x_U007emarketing-0-10-0-0-85-220.png/246x0w.png" alt="" style="max-height: 200px;">
-                    <h1 style="font-family: monospace">WorDict</h1>
-                    <h5 class="font-monospace">WorDict is a word game without internet usage. You may try to find words according to its meanings. WorDict is completely free.</h5>
-                    <a href="https://play.google.com/store/apps/details?id=com.berkbacalan.wordgame" class="bi bi-android2 text-white h1"></a>&nbsp;
-                    <a href="https://apps.apple.com/az/app/word-game-kelime-bilgisi/id1616335539" class="bi bi-apple text-white h1"></a><br /><br />
-                    <a href="wordict-terms.html" class="font-monospace text-info">Terms&Conditions</a><br />
-                    <a href="wordict-pp.html" class="font-monospace text-info">Privacy Policy</a>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/ba/33/5f/ba335f63-9833-347b-44f5-895b5a43d550/AppIcon-1x_U007emarketing-0-10-0-0-85-220.png/246x0w.png" class="card-img-top" alt="WorDict">
+                        <div class="card-body">
+                            <h3>WorDict</h3>
+                            <p class="card-text">Bilingual word puzzle game available on iOS and Android.</p>
+                            <div class="d-flex gap-2">
+                                <a href="https://play.google.com/store/apps/details?id=com.berkbacalan.wordgame" class="btn btn-primary">Play Store</a>
+                                <a href="https://apps.apple.com/az/app/word-game-kelime-bilgisi/id1616335539" class="btn btn-primary">App Store</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
+    </section>
 
-    <div id="mobile" class="container text-white text-center" style="min-height: 100vh;">
-        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
-            <div class="col-md-6 p-lg-5 mx-auto my-5">
-                <h2 class="display-3 fw-bold font-monospace">
-                    <p class="text-danger">Think</p>
-                    <p class="text-warning">Imagine</p>
-                    <p class="text-success">Build</p>
-                </h2>
-                <h3 class="fw-normal mb-3 text-white">
-                    Bringing a startup to life, bringing an idea to life and reaching millions of people has never been easier. The value you generate is accessible from anywhere in the world. You may have an amazing idea. Let's work together to bring it to life. I implement high-performance, multi-platform applications with Flutter. Let's plan your dream applications according to your budget.
-                </h3>
-                <div class="d-flex gap-3 justify-content-center lead fw-normal">
-                    <a class="link text-info" href="#about">
-                        Reach me about your project
-                        <svg class="bi">
-                            <use xlink:href="#chevron-right"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="product-device shadow-sm d-none d-md-block"></div>
-            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-        </div>
-    </div>
-
-    <div id="webproject" class="container text-white text-center d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-        <div class="p-3 text-center">
-            <div class="col-md-6 p-lg-5 mx-auto my-5">
-                <h2 class="display-6 fw-bold font-monospace">
-                    Let's bring to life whatever you need about the web.
-                </h2>
-                <h3 class="display-9 fw-bold font-monospace">
-                    Blog, Portfolio, e-Commerce etc.
-                </h3>
-                <h3 class="fw-normal mb-3 text-white">
-                    Fast production ✅<br />
-                    Responsive design ✅<br />
-                    Budget friendly ✅<br />
-                </h3>
-                <div class="d-flex justify-content-center lead fw-normal">
-                    <a class="link text-info" href="#about">
-                        Reach me about your project
-                        <svg class="bi">
-                            <use xlink:href="#chevron-right"></use>
-                        </svg>
-                    </a>
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Get in Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <p class="lead mb-4">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                    </p>
+                    <div class="d-flex justify-content-center gap-4 mb-4">
+                        <a href="https://www.linkedin.com/in/berkbacalan" class="social-icon">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/berkbacalan" class="social-icon">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="mailto:berkbacalan@gmail.com" class="social-icon">
+                            <i class="bi bi-envelope"></i>
+                        </a>
+                    </div>
+                    <p class="mb-0">
+                        <i class="bi bi-geo-alt me-2"></i>Ankara, Turkey
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id="whyworkme" class="container text-white text-center d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-        <div class="p-3 text-center">
-            <div class="mx-auto my-5">
-                <h2 class="display-6 fw-bold font-monospace">Why work with me?</h2>
-                <h3 class="display-9 fw-bold font-monospace">Good question.</h3>
-                <h3 class="fw-normal mb-3 text-white">
-                    Because I take <p class="text-success">ownership</p>
-                    Because I work <p class="text-success">fast</p>
-                    Because I always <p class="text-success">test</p>
-                    Because I follow <p class="text-success">best practices</p>
-                </h3>
-            </div>
+    <footer class="py-4 text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Berk Bacalan. All rights reserved.</p>
         </div>
-    </div>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
