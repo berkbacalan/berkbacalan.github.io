@@ -492,3 +492,21 @@ visoon.de, 64393, RESELLER
 xandr.com, 13293, RESELLER, f5ab79cb980f11d1
 xandr.com, 3318, RESELLER
 xandr.com, 8916, RESELLER
+advertising.com, 82632, RESELLER
+copper6.com, 766114, RESELLER
+google.com, pub-1682595508078257, RESELLER, f08c47fec0942fa0
+improvedigital.com, 2534, RESELLER
+improvedigital.com, 2609, RESELLER
+lijit.com, 558045, RESELLER, fafdf38b16bf6b2b
+loopme.com, 15629, RESELLER, 6c8d5f95897a5a3b
+opera.com, pub6843437470464, RESELLER, 55a0c5fd61378de3
+opera.com, pub7275292332480, RESELLER, 55a0c5fd61378de3
+pubmatic.com, 164798, RESELLER, 5d62403b186f2ace
+pubmatic.com, 166078, RESELLER, 5d62403b186f2ace
+pubnative.net, 1007485, RESELLER, d641df8625486a7b
+rubiconproject.com, 16834, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 26360, RESELLER, 0bfd66d529a55807
+taurusx.com, 80635, RESELLER
+video.unrulymedia.com, 389957698, RESELLER
+xandr.com, 16546, RESELLER
+zmaticoo.com, 5135063, RESELLER
