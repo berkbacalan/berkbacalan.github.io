@@ -3,300 +3,196 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Berk Bacalan - Senior Software Engineer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <title>Berk Bacalan - Senior Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #6366f1;
             --secondary-color: #4f46e5;
-            --accent-color: #06b6d4;
-            --background-color: #f8fafc;
-            --text-color: #1e293b;
-            --gradient-start: #6366f1;
-            --gradient-end: #06b6d4;
+            --background-color: #0f172a; /* Dark Blue/Gray */
+            --surface-color: #1e293b;   /* Lighter card background */
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-color: #e2e8f0;       /* Light gray text */
+            --text-secondary-color: #94a3b8; /* Muted text */
+            --glow-color: rgba(99, 102, 241, 0.4);
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--background-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
         }
-
+        
+        /* Modern Navbar */
         .navbar {
-            backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.98) !important;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             padding: 1rem 0;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(15, 23, 42, 0.85); /* background-color with opacity */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .navbar-brand {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-color) !important;
-            padding: 0.5rem 1rem;
-            border: 2px solid var(--primary-color);
-            border-radius: 8px;
-            transition: all 0.3s ease;
         }
 
-        .navbar-brand:hover {
-            background-color: var(--primary-color);
-            color: white !important;
-        }
-
-        .navbar-dark .navbar-nav .nav-link {
-            color: var(--text-color);
+        .navbar-nav .nav-link {
+            color: var(--text-secondary-color);
             font-weight: 500;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 0.5rem 1.2rem;
-            margin: 0 0.3rem;
+            padding: 0.5rem 1rem;
             position: relative;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
         }
 
-        .navbar-dark .navbar-nav .nav-link::after {
+        .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+            color: var(--text-color);
+        }
+
+        .navbar-nav .nav-link::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: 0;
+            bottom: -5px;
             left: 50%;
-            background-color: var(--primary-color);
-            transition: all 0.3s ease;
             transform: translateX(-50%);
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
         }
 
-        .navbar-dark .navbar-nav .nav-link:hover::after {
-            width: 80%;
+        .navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after {
+            width: 50%;
         }
 
-        .navbar-dark .navbar-nav .nav-link:hover {
-            color: var(--primary-color);
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 0.5rem;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-toggler-icon {
-            background-image: none;
-            position: relative;
-            width: 24px;
-            height: 2px;
-            background-color: var(--text-color);
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler-icon::before,
-        .navbar-toggler-icon::after {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 2px;
-            background-color: var(--text-color);
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler-icon::before {
-            transform: translateY(-8px);
-        }
-
-        .navbar-toggler-icon::after {
-            transform: translateY(8px);
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-            background-color: transparent;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-            transform: rotate(45deg);
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-            transform: rotate(-45deg);
-        }
-
-        .section {
-            padding: 100px 0;
-        }
-
+        /* Hero Section */
         .hero-section {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            color: white;
-            padding: 80px 0;
+            background-color: var(--background-color);
+        }
+        
+        .hero-section .display-4 { font-weight: 800; }
+        .hero-section .text-primary-glow { color: var(--primary-color); text-shadow: 0 0 15px var(--glow-color); }
+        .hero-section .lead { color: var(--text-secondary-color); max-width: 600px; }
+        .hero-section .profile-img {
+            width: 320px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--surface-color);
+            box-shadow: 0 0 40px var(--glow-color);
         }
 
-        @media (max-width: 991.98px) {
-            .hero-section {
-                text-align: center;
-                padding: 120px 0 60px;
-            }
+        .btn-primary { background-color: var(--primary-color); border: none; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: var(--secondary-color); transform: translateY(-3px); }
+        .btn-outline-light { border-color: var(--primary-color); color: var(--primary-color); transition: all 0.3s ease; }
+        .btn-outline-light:hover { background-color: var(--primary-color); color: white; transform: translateY(-3px); }
 
-            .hero-section .col-lg-6:first-child {
-                margin-bottom: 40px;
-            }
-
-            .hero-section img {
-                max-width: 250px !important;
-                margin: 0 auto;
-            }
-
-            .hero-section .d-flex {
-                justify-content: center;
-            }
-
-            .hero-section .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
+        /* General Section Styling */
+        .section {
+            padding: 100px 0;
         }
+        .section-title { font-weight: 700; margin-bottom: 4rem; }
+        
+        /* Experience Timeline */
+        .timeline { position: relative; max-width: 900px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 4px; background-color: var(--surface-color); top: 0; bottom: 0; left: 50%; margin-left: -2px; }
+        .timeline-item { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
+        .timeline-item::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: var(--background-color); border: 4px solid var(--primary-color); top: 25px; border-radius: 50%; z-index: 1; }
+        .timeline-item.left { left: 0; }
+        .timeline-item.right { left: 50%; }
+        .timeline-item.left::before { content: " "; height: 0; position: absolute; top: 32px; width: 0; z-index: 1; right: 30px; border: medium solid var(--surface-color); border-width: 10px 0 10px 10px; border-color: transparent transparent transparent var(--surface-color); }
+        .timeline-item.right::before { content: " "; height: 0; position: absolute; top: 32px; width: 0; z-index: 1; left: 30px; border: medium solid var(--surface-color); border-width: 10px 10px 10px 0; border-color: transparent var(--surface-color) transparent transparent; }
+        .timeline-item.right::after { left: -10px; }
+        .timeline-content { padding: 20px 30px; background-color: var(--surface-color); border: 1px solid var(--border-color); position: relative; border-radius: 8px; }
+        .timeline-content h3 { font-weight: 600; color: var(--text-color); }
+        .timeline-content h4 { font-weight: 500; color: var(--primary-color); }
+        .timeline-content ul { padding-left: 20px; color: var(--text-secondary-color); }
 
-        .skill-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-card .d-flex {
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .experience-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-section {
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            color: white;
-        }
-
-        .social-icon {
-            font-size: 1.5rem;
-            color: var(--text-color);
-            transition: color 0.3s ease;
-        }
-
-        .social-icon:hover {
-            color: var(--primary-color);
-        }
-
-        .tech-stack-icon {
-            font-size: 2.5rem;
-            color: var(--text-color);
-            transition: transform 0.3s ease;
-        }
-
-        .tech-stack-icon:hover {
-            transform: scale(1.1);
-        }
-
+        /* Skills & Projects Cards */
         .card {
-            background: white;
-            border: none;
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             height: 100%;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
-
-        .card-img-top {
-            border-radius: 12px;
-            padding: 1.5rem !important;
-            background: var(--background-color);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover .card-img-top {
-            transform: scale(1.05);
-        }
-
-        .card-body {
-            padding: 1.5rem 0 0 0;
-        }
-
+        
+        /* DÜZELTME 1: KART YAZI RENKLERİ */
         .card h3 {
             color: var(--text-color);
-            font-weight: 600;
-            margin-bottom: 1rem;
+        }
+        .card .card-text, #skills .card h3 {
+            color: var(--text-secondary-color);
+        }
+        #projects .card h3 {
+             color: var(--text-color); /* Proje başlıkları daha belirgin olsun */
+        }
+        
+        /* DÜZELTME 3: PROJE İKONLARI */
+        .card-img-top {
+            border-radius: 10px;
+            padding: 1.5rem; /* Padding azaltıldı */
+            background-color: var(--background-color);
+            max-width: 140px; /* Boyut küçültüldü */
+            margin: 0 auto; /* Otomatik hizalama */
+            box-shadow: 0 0 25px rgba(0,0,0,0.4); /* Yumuşak gölge eklendi */
         }
 
-        .card-text {
-            color: #64748b;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
+        .tech-stack-icon { font-size: 3rem; color: var(--text-secondary-color); transition: color 0.3s ease; }
+        .tech-stack-icon:hover { color: var(--primary-color); }
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: all 0.3s ease;
+        .contact-section { background-color: var(--surface-color); }
+        .social-icon { font-size: 2rem; color: var(--text-secondary-color); transition: color 0.3s ease; }
+        .social-icon:hover { color: var(--primary-color); }
+        
+        /* Reveal on Scroll Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        
+        /* Responsive Timeline */
+        @media screen and (max-width: 768px) {
+            .timeline::after { left: 10px; }
+            .timeline-item { width: 100%; padding-left: 50px; padding-right: 20px; }
+            .timeline-item.left, .timeline-item.right { left: 0%; }
+            .timeline-item::after { left: 1px; }
+            .timeline-item.left::before, .timeline-item.right::before { left: 40px; border: medium solid var(--surface-color); border-width: 10px 10px 10px 0; border-color: transparent var(--surface-color) transparent transparent; }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
+            <a class="navbar-brand" href="#">BB</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -314,74 +210,70 @@
 
     <section id="home" class="hero-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">Hi, I'm Berk Bacalan</h1>
-                    <h2 class="h3 mb-4">Senior Software Development Engineer</h2>
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-7">
+                    <h1 class="display-4 mb-3">Hi, I'm <span class="text-primary-glow">Berk Bacalan</span></h1>
+                    <h2 class="h3 mb-4 text-secondary-color">Senior Software Development Engineer</h2>
                     <p class="lead mb-4">
-                        Experienced software engineer specializing in backend development, microservices architecture, 
-                        and cloud solutions. Currently working at TOM Digital Bank, maintaining digital onboarding initiatives 
-                        and third-party integrations.
+                        Experienced software engineer specializing in backend development, microservices architecture, and cloud solutions. Currently working at TOM Digital Bank, maintaining digital onboarding initiatives and third-party integrations.
                     </p>
                     <div class="d-flex gap-3">
-                        <a href="#contact" class="btn btn-light btn-lg">Get in Touch</a>
-                        <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+                        <a href="#contact" class="btn btn-primary btn-lg px-4">Get in Touch</a>
+                        <a href="#projects" class="btn btn-outline-light btn-lg px-4">View My Work</a>
                     </div>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <img src="profile.jpeg" alt="Berk Bacalan" class="img-fluid rounded-circle" style="max-width: 300px;">
+                <div class="col-lg-5 text-center">
+                    <img src="profile.jpeg" alt="Berk Bacalan" class="profile-img">
                 </div>
             </div>
         </div>
     </section>
 
     <section id="experience" class="section">
-        <div class="container">
-            <h2 class="text-center mb-5">Professional Experience</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="experience-card">
+        <div class="container reveal">
+            <h2 class="text-center section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content">
                         <h3>Senior Software Development Engineer</h3>
-                        <h4 class="text-primary">TOM Digital Bank A.Ş.</h4>
+                        <h4>TOM Digital Bank A.Ş.</h4>
                         <ul>
-                            <li>Maintaining digital onboarding for customer acquisition and smooth onboarding process</li>
-                            <li>Managing third-party legal office integrations</li>
-                            <li>Implementing Kibana enhancements for monitoring</li>
+                            <li>Maintaining digital onboarding for customer acquisition.</li>
+                            <li>Managing third-party legal office integrations.</li>
+                            <li>Implementing Kibana enhancements for monitoring.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="experience-card">
+                <div class="timeline-item right reveal">
+                    <div class="timeline-content">
                         <h3>Senior Software Development Engineer</h3>
-                        <h4 class="text-primary">thecodebase.io</h4>
+                        <h4>thecodebase.io</h4>
                         <ul>
-                            <li>Led e-commerce platform development using DDD and CQRS</li>
-                            <li>Built core modules with ASP.NET and PostgreSQL</li>
-                            <li>Implemented high-quality testing practices</li>
+                            <li>Led e-commerce platform development using DDD and CQRS.</li>
+                            <li>Built core modules with ASP.NET and PostgreSQL.</li>
+                            <li>Implemented high-quality testing practices.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="experience-card">
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content">
                         <h3>Software Engineer ICII</h3>
-                        <h4 class="text-primary">Delivery Hero (Talabat)</h4>
+                        <h4>Delivery Hero (Talabat)</h4>
                         <ul>
-                            <li>Contributed to Subscription domain with 150k throughput and 99.8% SLO</li>
-                            <li>Optimized .NET microservices using ASP.NET Core, Kafka, PostgreSQL</li>
-                            <li>Implemented monitoring with NewRelic, Datadog, and Sentry</li>
-                            <li>Utilized AWS and GCP for serverless architectures</li>
+                            <li>Contributed to Subscription domain with 150k throughput & 99.8% SLO.</li>
+                            <li>Optimized .NET microservices using ASP.NET Core, Kafka, PostgreSQL.</li>
+                            <li>Utilized AWS and GCP for serverless architectures.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="experience-card">
+                <div class="timeline-item right reveal">
+                    <div class="timeline-content">
                         <h3>Software Engineer - Backend</h3>
-                        <h4 class="text-primary">Getir</h4>
+                        <h4>Getir</h4>
                         <ul>
-                            <li>Developed microservices for GetirCar using AWS Lambda and FastAPI</li>
-                            <li>Automated data operations with MongoDB, Redshift, and Airflow</li>
-                            <li>Created REST APIs with Django and FastAPI</li>
-                            <li>Monitored services via Sentry, Rancher, and Kubernetes</li>
+                            <li>Developed microservices for GetirCar using AWS Lambda and FastAPI.</li>
+                            <li>Automated data operations with MongoDB, Redshift, and Airflow.</li>
+                            <li>Created REST APIs with Django and FastAPI.</li>
                         </ul>
                     </div>
                 </div>
@@ -389,40 +281,40 @@
         </div>
     </section>
 
-    <section id="skills" class="section bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Technical Skills</h2>
+    <section id="skills" class="section">
+        <div class="container reveal">
+            <h2 class="text-center section-title">Technical Skills</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="skill-card">
-                        <h3 class="h5 mb-3">Backend Development</h3>
-                        <div class="d-flex flex-wrap">
-                            <i class="devicon-dotnetcore-plain tech-stack-icon"></i>
-                            <i class="devicon-python-plain tech-stack-icon"></i>
-                            <i class="devicon-java-plain tech-stack-icon"></i>
-                            <i class="devicon-csharp-plain tech-stack-icon"></i>
+                <div class="col-md-4 mb-4 reveal">
+                    <div class="card p-4">
+                        <h3 class="h5 mb-4 text-center">Backend Development</h3>
+                        <div class="d-flex flex-wrap justify-content-center gap-4">
+                            <i class="devicon-dotnetcore-plain tech-stack-icon" title=".NET Core"></i>
+                            <i class="devicon-python-plain tech-stack-icon" title="Python"></i>
+                            <i class="devicon-java-plain tech-stack-icon" title="Java"></i>
+                            <i class="devicon-csharp-plain tech-stack-icon" title="C#"></i>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="skill-card">
-                        <h3 class="h5 mb-3">Cloud & DevOps</h3>
-                        <div class="d-flex flex-wrap">
-                            <i class="devicon-amazonwebservices-plain tech-stack-icon"></i>
-                            <i class="devicon-googlecloud-plain tech-stack-icon"></i>
-                            <i class="devicon-docker-plain tech-stack-icon"></i>
-                            <i class="devicon-kubernetes-plain tech-stack-icon"></i>
+                <div class="col-md-4 mb-4 reveal">
+                    <div class="card p-4">
+                        <h3 class="h5 mb-4 text-center">Cloud & DevOps</h3>
+                        <div class="d-flex flex-wrap justify-content-center gap-4">
+                            <i class="devicon-amazonwebservices-plain-wordmark tech-stack-icon" title="AWS"></i>
+                            <i class="devicon-googlecloud-plain tech-stack-icon" title="GCP"></i>
+                            <i class="devicon-docker-plain tech-stack-icon" title="Docker"></i>
+                            <i class="devicon-kubernetes-plain tech-stack-icon" title="Kubernetes"></i>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="skill-card">
-                        <h3 class="h5 mb-3">Mobile Development</h3>
-                        <div class="d-flex flex-wrap">
-                            <i class="devicon-flutter-plain tech-stack-icon"></i>
-                            <i class="devicon-android-plain tech-stack-icon"></i>
-                            <i class="devicon-apple-original tech-stack-icon"></i>
-                            <i class="devicon-firebase-plain tech-stack-icon"></i>
+                <div class="col-md-4 mb-4 reveal">
+                    <div class="card p-4">
+                        <h3 class="h5 mb-4 text-center">Mobile Development</h3>
+                        <div class="d-flex flex-wrap justify-content-center gap-4">
+                            <i class="devicon-flutter-plain tech-stack-icon" title="Flutter"></i>
+                            <i class="devicon-android-plain tech-stack-icon" title="Android"></i>
+                            <i class="devicon-apple-original tech-stack-icon" title="iOS"></i>
+                            <i class="devicon-firebase-plain tech-stack-icon" title="Firebase"></i>
                         </div>
                     </div>
                 </div>
@@ -431,39 +323,39 @@
     </section>
 
     <section id="projects" class="section">
-        <div class="container">
-            <h2 class="text-center mb-5">Featured Projects</h2>
+        <div class="container reveal">
+            <h2 class="text-center section-title">Featured Projects</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 reveal">
                     <div class="card">
-                        <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple126/v4/6e/e0/4c/6ee04c6c-8166-a40c-68b3-2f34c8bad49b/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png" class="card-img-top" alt="AnyScanner">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column p-4">
+                            <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple126/v4/6e/e0/4c/6ee04c6c-8166-a40c-68b3-2f34c8bad49b/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png" class="card-img-top mb-4" alt="AnyScanner">
                             <h3>AnyScanner</h3>
-                            <p class="card-text">Document scanning app with QR/barcode support, used by 40,000+ users.</p>
-                            <a href="https://apps.apple.com/us/app/anyscanner/id1658302219" class="btn btn-primary">View on App Store</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1b/36/1d/1b361dbf-b014-2a51-f2ca-c0a0b222f909/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/230x0w.png" class="card-img-top" alt="Spendy AI">
-                        <div class="card-body">
-                            <h3>Spendy AI</h3>
-                            <p class="card-text">Smart finance management app with automated expense tracking.</p>
-                            <a href="https://apps.apple.com/tr/app/spendy-ai-budget/id6747646869?l=tr" class="btn btn-primary">View on App Store</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/ba/33/5f/ba335f63-9833-347b-44f5-895b5a43d550/AppIcon-1x_U007emarketing-0-10-0-0-85-220.png/246x0w.png" class="card-img-top" alt="WorDict">
-                        <div class="card-body">
-                            <h3>WorDict</h3>
-                            <p class="card-text">Bilingual word puzzle game available on iOS and Android.</p>
+                            <p class="card-text flex-grow-1">AnyScanner is your all-in-one app for scanning documents, creating PDFs, signing contracts, and extracting text with OCR, used by 40,000+ users.</p>
                             <div class="d-flex gap-2">
-                                <a href="https://play.google.com/store/apps/details?id=com.berkbacalan.wordgame" class="btn btn-primary">Play Store</a>
-                                <a href="https://apps.apple.com/az/app/word-game-kelime-bilgisi/id1616335539" class="btn btn-primary">App Store</a>
+                                <a href="https://apps.apple.com/us/app/anyscanner/id1658302219" target="_blank" class="btn btn-primary w-100">View on App Store</a>
+                                <a href="/anyscanner.html" class="btn btn-outline-light w-100">Learn More</a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 reveal">
+                    <div class="card">
+                        <div class="card-body d-flex flex-column p-4">
+                            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1b/36/1d/1b361dbf-b014-2a51-f2ca-c0a0b222f909/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/230x0w.png" class="card-img-top mb-4" alt="Spendy AI">
+                            <h3>Spendy AI</h3>
+                            <p class="card-text flex-grow-1">Smart finance management app with automated expense tracking. Insights, reports and more in SpendyAI.</p>
+                            <a href="https://apps.apple.com/tr/app/spendy-ai-budget/id6747646869" target="_blank" class="btn btn-primary">View on App Store</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 reveal">
+                    <div class="card">
+                        <div class="card-body d-flex flex-column p-4">
+                            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ef/5d/90/ef5d90b1-7ce3-4dd2-5777-6f76b32cccfe/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/230x0w.webp" class="card-img-top mb-4" alt="WorDict">
+                            <h3>ShopListy</h3>
+                            <p class="card-text flex-grow-1">ShopListy is your simple, shared list app for organizing everything from groceries to daily tasks.</p>
+                            <a href="https://apps.apple.com/us/app/shoplisty/id6747897113" target="_blank" class="btn btn-primary">View on App Store</a>
                         </div>
                     </div>
                 </div>
@@ -472,27 +364,20 @@
     </section>
 
     <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="text-center mb-5">Get in Touch</h2>
+        <div class="container reveal">
+            <h2 class="text-center section-title">Get in Touch</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
-                    <p class="lead mb-4">
+                    <p class="lead mb-4 text-secondary-color">
                         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                     </p>
+                    <a href="mailto:berkbacalan@gmail.com" class="btn btn-primary btn-lg px-5 py-3 mb-5">Say Hello</a>
                     <div class="d-flex justify-content-center gap-4 mb-4">
-                        <a href="https://www.linkedin.com/in/berkbacalan" class="social-icon">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/berkbacalan" class="social-icon">
-                            <i class="bi bi-github"></i>
-                        </a>
-                        <a href="mailto:berkbacalan@gmail.com" class="social-icon">
-                            <i class="bi bi-envelope"></i>
-                        </a>
+                        <a href="https://www.linkedin.com/in/berkbacalan" target="_blank" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/berkbacalan" target="_blank" class="social-icon"><i class="bi bi-github"></i></a>
+                        <a href="mailto:berkbacalan@gmail.com" class="social-icon"><i class="bi bi-envelope"></i></a>
                     </div>
-                    <p class="mb-0">
-                        <i class="bi bi-geo-alt me-2"></i>Ankara, Turkey
-                    </p>
+                    <p class="text-secondary-color"><i class="bi bi-geo-alt me-2"></i>Ankara, Turkey</p>
                 </div>
             </div>
         </div>
@@ -500,10 +385,35 @@
 
     <footer class="py-4 text-center">
         <div class="container">
-            <p class="mb-0">&copy; 2024 Berk Bacalan. All rights reserved.</p>
+            <p class="mb-0 text-secondary-color">&copy; 2025 Berk Bacalan. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        const nav = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
 </body>
 </html>
