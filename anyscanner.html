@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,8 +20,15 @@
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         body {
@@ -52,7 +60,7 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
@@ -62,10 +70,23 @@
             padding: 0 25px;
         }
 
-        .logo-container { display: flex; align-items: center; gap: 12px; }
-        .logo-container img { width: 45px; height: 45px; border-radius: 12px; }
-        .logo-container span { font-size: 1.5rem; font-weight: 700; }
-        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-container img {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+        }
+
+        .logo-container span {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
         .hero {
             padding: 80px 0;
             overflow: hidden;
@@ -90,6 +111,7 @@
             background: linear-gradient(90deg, #FFFFFF, #C0C0C0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
             animation: fadeInUp 0.8s ease-out;
         }
 
@@ -101,7 +123,7 @@
             animation: fadeInUp 0.8s ease-out 0.2s;
             animation-fill-mode: both;
         }
-        
+
         .hero-mockup-container {
             flex: 1;
             perspective: 1500px;
@@ -130,7 +152,7 @@
             display: block;
             border-radius: 28px;
         }
-        
+
         .cta-button {
             display: inline-block;
             background-color: var(--primary-color);
@@ -144,62 +166,195 @@
             animation: fadeInUp 0.8s ease-out 0.4s;
             animation-fill-mode: both;
         }
-        
+
         .cta-button:hover {
             transform: scale(1.05);
             box-shadow: 0 5px 25px var(--glow-color);
         }
-        
-        .features { padding: 100px 0; }
-        .section-title { text-align: center; font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 700; margin-bottom: 20px; }
-        .section-subtitle { text-align: center; font-size: 1.2rem; color: var(--text-secondary-color); margin-bottom: 70px; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .feature-card { background-color: var(--surface-color); padding: 30px; border-radius: 20px; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease; opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
-        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-        .feature-card svg { width: 32px; height: 32px; color: var(--primary-color); margin-bottom: 20px; }
-        .feature-card h3 { font-size: 1.4rem; font-weight: 600; margin: 0 0 10px 0; }
-        .feature-card p { color: var(--text-secondary-color); line-height: 1.7; font-size: 1rem; }
-        
-        .showcase-section { padding: 80px 0; display: flex; align-items: center; gap: 60px; }
-        .showcase-section.reverse { flex-direction: row-reverse; }
-        .showcase-text { flex: 1; opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
-        .showcase-text h3 { font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; }
-        .showcase-text p { font-size: 1.1rem; color: var(--text-secondary-color); }
-        .showcase-image { flex: 1; text-align: center; opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s forwards; }
-        .showcase-image img { max-width: 320px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); }
+        .features {
+            padding: 100px 0;
+        }
 
-        .cta-final { background: linear-gradient(45deg, #0a3dff, #0a84ff); border-radius: 30px; padding: 80px 40px; text-align: center; margin: 100px 0; }
-        .cta-final h2 { font-size: 2.8rem; font-weight: 700; }
-        
-        footer { text-align: center; padding: 50px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary-color); }
-        
+        .section-title {
+            text-align: center;
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary-color);
+            margin-bottom: 70px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--surface-color);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card svg {
+            width: 32px;
+            height: 32px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary-color);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .showcase-section {
+            padding: 80px 0;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .showcase-section.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .showcase-text {
+            flex: 1;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .showcase-text h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .showcase-text p {
+            font-size: 1.1rem;
+            color: var(--text-secondary-color);
+        }
+
+        .showcase-image {
+            flex: 1;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+
+        .showcase-image img {
+            max-width: 320px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-final {
+            background: linear-gradient(45deg, #0a3dff, #0a84ff);
+            border-radius: 30px;
+            padding: 80px 40px;
+            text-align: center;
+            margin: 100px 0;
+        }
+
+        .cta-final h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary-color);
+        }
+
         @media (max-width: 900px) {
-            .hero-content { flex-direction: column; text-align: center; gap: 40px; }
-            .hero-text { text-align: center; }
-            .hero-text p { margin-left: auto; margin-right: auto; }
-            .hero-mockup-container { margin-top: 40px; perspective: none; }
-            .phone-mockup { transform: none; }
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-mockup-container {
+                margin-top: 40px;
+                perspective: none;
+            }
+
+            .phone-mockup {
+                transform: none;
+            }
         }
+
         @media (max-width: 860px) {
-            .showcase-section { flex-direction: column !important; text-align: center; gap: 40px; }
-            .showcase-image img { max-width: 80%; }
+            .showcase-section {
+                flex-direction: column !important;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .showcase-image img {
+                max-width: 80%;
+            }
         }
+
         @media (max-width: 768px) {
-            .header-content { padding: 0 20px; }
-            .logo-container span { display: none; }
+            .header-content {
+                padding: 0 20px;
+            }
+
+            .logo-container span {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header id="main-header">
         <div class="header-content">
             <div class="logo-container">
-                <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple126/v4/6e/e0/4c/6ee04c6c-8166-a40c-68b3-2f34c8bad49b/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png" alt="AnyScanner Logo">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple126/v4/6e/e0/4c/6ee04c6c-8166-a40c-68b3-2f34c8bad49b/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png"
+                    alt="AnyScanner Logo">
                 <span>AnyScanner</span>
             </div>
-            <a href="https://apps.apple.com/us/app/anyscanner-pdf-scanner/id1658302219" class="cta-button" target="_blank">Download</a>
+            <a href="https://apps.apple.com/us/app/anyscanner-pdf-scanner/id1658302219" class="cta-button"
+                target="_blank">Download</a>
         </div>
     </header>
 
@@ -209,8 +364,10 @@
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1>Say Goodbye to Paper Clutter.</h1>
-                        <p>AnyScanner transforms your iPhone and iPad into a smart document hub. Scan, sign, edit, and share anything. The key to digital order is in your pocket.</p>
-                        <a href="https://apps.apple.com/us/app/anyscanner-pdf-scanner/id1658302219" class="cta-button" target="_blank">Download Free on the App Store</a>
+                        <p>AnyScanner transforms your iPhone and iPad into a smart document hub. Scan, sign, edit, and
+                            share anything. The key to digital order is in your pocket.</p>
+                        <a href="https://apps.apple.com/us/app/anyscanner-pdf-scanner/id1658302219" class="cta-button"
+                            target="_blank">Download Free on the App Store</a>
                     </div>
                     <div class="hero-mockup-container">
                         <div class="phone-mockup">
@@ -225,7 +382,8 @@
             <div class="showcase-section">
                 <div class="showcase-text">
                     <h3>Studio-Quality Scans, Every Time.</h3>
-                    <p>Our advanced image processing cleans up shadows, corrects perspectives, and sharpens text automatically. Every scan looks crisp, clear, and professional.</p>
+                    <p>Our advanced image processing cleans up shadows, corrects perspectives, and sharpens text
+                        automatically. Every scan looks crisp, clear, and professional.</p>
                 </div>
                 <div class="showcase-image">
                     <img src="scan-page.PNG" alt="Flawless Scan Quality">
@@ -235,7 +393,8 @@
             <div class="showcase-section reverse">
                 <div class="showcase-text">
                     <h3>Sign Documents with a Tap.</h3>
-                    <p>Finalize contracts, forms, and agreements in seconds. Radically accelerate your workflow with secure, fast e-signatures. The era of print, sign, scan is over.</p>
+                    <p>Finalize contracts, forms, and agreements in seconds. Radically accelerate your workflow with
+                        secure, fast e-signatures. The era of print, sign, scan is over.</p>
                 </div>
                 <div class="showcase-image">
                     <img src="sign-doc.PNG" alt="Secure E-Signature">
@@ -245,47 +404,91 @@
 
         <section class="features container">
             <h2 class="section-title">Your Complete Document Toolkit</h2>
-            <p class="section-subtitle">AnyScanner is packed with powerful tools designed to maximize your productivity and simplify your life.</p>
-            
+            <p class="section-subtitle">AnyScanner is packed with powerful tools designed to maximize your productivity
+                and simplify your life.</p>
+
             <div class="feature-grid">
                 <div class="feature-card" style="animation-delay: 0.1s;">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6.226c0-1.032.842-1.875 1.875-1.875h12.75c1.033 0 1.875.843 1.875 1.875v3.55M5.25 12h13.5" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6.226c0-1.032.842-1.875 1.875-1.875h12.75c1.033 0 1.875.843 1.875 1.875v3.55M5.25 12h13.5" />
+                    </svg>
                     <h3>Document Scanning</h3>
-                    <p>Capture anything and save it as a high-quality, sortable PDF or JPEG file. Perfect for receipts, notes, and reports.</p>
+                    <p>Capture anything and save it as a high-quality, sortable PDF or JPEG file. Perfect for receipts,
+                        notes, and reports.</p>
                 </div>
                 <div class="feature-card" style="animation-delay: 0.2s;">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                    </svg>
                     <h3>PDF Signing</h3>
-                    <p>Sign documents and contracts with your finger or a stylus. A fast, easy, and legally binding way to finalize agreements.</p>
+                    <p>Sign documents and contracts with your finger or a stylus. A fast, easy, and legally binding way
+                        to finalize agreements.</p>
                 </div>
                 <div class="feature-card" style="animation-delay: 0.3s;">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                    </svg>
                     <h3>PDF Encryption</h3>
-                    <p>Protect your confidential documents from unauthorized access by adding a strong, encrypted password.</p>
+                    <p>Protect your confidential documents from unauthorized access by adding a strong, encrypted
+                        password.</p>
                 </div>
-                 <div class="feature-card" style="animation-delay: 0.4s;">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5zM13.5 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5z" /></svg>
+                <div class="feature-card" style="animation-delay: 0.4s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5zM13.5 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5z" />
+                    </svg>
                     <h3>QR Create & Read</h3>
-                    <p>Instantly scan any QR code. Create your own custom codes for websites, Wi-Fi, contacts, and much more.</p>
+                    <p>Instantly scan any QR code. Create your own custom codes for websites, Wi-Fi, contacts, and much
+                        more.</p>
                 </div>
                 <div class="feature-card" style="animation-delay: 0.5s;">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                    </svg>
                     <h3>Text to Speech</h3>
-                    <p>Listen to your documents read aloud. A revolutionary feature for proofreading, multitasking, and accessibility.</p>
+                    <p>Listen to your documents read aloud. A revolutionary feature for proofreading, multitasking, and
+                        accessibility.</p>
                 </div>
-                 <div class="feature-card" style="animation-delay: 0.6s;">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0120.25 6v1.5m0 9V18A2.25 2.25 0 0118 20.25h-1.5m-9 0H6A2.25 2.25 0 013.75 18v-1.5" /></svg>
+                <div class="feature-card" style="animation-delay: 0.6s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0120.25 6v1.5m0 9V18A2.25 2.25 0 0118 20.25h-1.5m-9 0H6A2.25 2.25 0 013.75 18v-1.5" />
+                    </svg>
                     <h3>High-Quality Scans & Smart Crop</h3>
-                    <p>Turn documents into crisp digital files. Automatic edge detection ensures a perfect, professional-looking scan every time.</p>
+                    <p>Turn documents into crisp digital files. Automatic edge detection ensures a perfect,
+                        professional-looking scan every time.</p>
                 </div>
             </div>
         </section>
 
         <div class="container">
-             <section class="cta-final">
-                <h2>Rediscover Your Productivity.</h2>
-                <p style="color: rgba(255,255,255,0.8); margin-bottom: 30px; font-size: 1.2rem;">Download AnyScanner today and leave paperwork behind for good.</p>
-                <a href="https://apps.apple.com/us/app/anyscanner-pdf-scanner/id1658302219" class="cta-button" style="background-color: #fff; color: #000;" target="_blank">Get Started Free</a>
+            <section class="cta-final"
+                style="background: linear-gradient(135deg, rgba(10, 132, 255, 0.1), rgba(10, 132, 255, 0.05)); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); position: relative; overflow: hidden;">
+                <div
+                    style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(10,132,255,0.15) 0%, transparent 70%); animation: pulse 8s infinite;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h2
+                        style="font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 1rem; background: linear-gradient(90deg, #fff, #81b0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        Rediscover Your Productivity.</h2>
+                    <p
+                        style="color: #A1A1A6; margin-bottom: 40px; font-size: 1.3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Join 40,000+ users who have already digitized their workflow. Download AnyScanner today and
+                        leave paperwork behind for good.</p>
+                    <a href="https://apps.apple.com/us/app/anyscanner-pdf-scanner/id1658302219" class="cta-button"
+                        style="background-color: #fff; color: #000; padding: 18px 40px; font-size: 1.2rem; box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);"
+                        target="_blank">Get Started Free</a>
+                </div>
             </section>
         </div>
     </main>
@@ -298,7 +501,7 @@
 
     <script>
         const header = document.getElementById('main-header');
-        window.onscroll = function() {
+        window.onscroll = function () {
             if (window.scrollY > 20) {
                 header.classList.add('scrolled');
             } else {
@@ -320,4 +523,5 @@
         });
     </script>
 </body>
+
 </html>

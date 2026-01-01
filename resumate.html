@@ -144,6 +144,7 @@
             background: linear-gradient(135deg, #FFF, #A78BFA);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         nav ul {
@@ -215,6 +216,7 @@
             background: linear-gradient(90deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero p {
@@ -607,23 +609,7 @@
                     class="btn-primary">Download on App Store</a>
             </div>
 
-            <div class="hero-visual">
-                <!-- Placeholder for App Screenshot or just a nice glassmorphism container for the Logo -->
-                <div style="text-align: center;">
-                    <img src="resumate_logo.png" alt="ResuMate App"
-                        style="width: 150px; height: 150px; margin-bottom: 20px; box-shadow: none;">
-                    <h3 style="font-weight: 400; color: rgba(255,255,255,0.7);">Your Personal Career Resume Assistant
-                    </h3>
-                    <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
-                        <span
-                            style="background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">Advanced
-                            AI Models</span>
-                        <span
-                            style="background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">ATS
-                            Friendly</span>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -655,8 +641,8 @@
             <div class="feature-card">
                 <div class="feature-icon">🌐</div>
                 <h3>Global Support</h3>
-                <p>Support for 16 languages including English, Spanish, French, German, and more. Dual-language feedback
-                    logic included.</p>
+                <p>App interface available in 16 languages. Generate CVs, analysis, and feedback in <strong>any
+                        language</strong> supported by advanced AI models.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📄</div>
@@ -691,18 +677,9 @@
                     <li>Clear, distraction-free structure</li>
                 </ul>
             </div>
-            <div class="feature-visual">
-                <!-- Visual Placeholder -->
-                <div
-                    style="width: 200px; height: 280px; background: white; border-radius: 4px; padding: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); opacity: 0.9;">
-                    <div style="height: 10px; width: 60%; background: #ddd; margin-bottom: 20px;"></div>
-                    <div style="height: 6px; width: 90%; background: #eee; margin-bottom: 8px;"></div>
-                    <div style="height: 6px; width: 90%; background: #eee; margin-bottom: 8px;"></div>
-                    <div style="height: 6px; width: 40%; background: #eee; margin-bottom: 20px;"></div>
-                    <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 15px;">
-                    <div style="height: 6px; width: 95%; background: #eee; margin-bottom: 10px;"></div>
-                    <div style="height: 6px; width: 95%; background: #eee; margin-bottom: 10px;"></div>
-                </div>
+            <div class="feature-visual" style="background: transparent; border: none; box-shadow: none;">
+                <img src="template1.png" alt="Minimalist Template"
+                    style="max-height: 100%; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
             </div>
         </div>
 
@@ -717,19 +694,9 @@
                     <li>Impact-driven structure</li>
                 </ul>
             </div>
-            <div class="feature-visual">
-                <!-- Executive Visual Placeholder (Darker/Premium) -->
-                <div
-                    style="width: 200px; height: 280px; background: #2c3e50; border-radius: 4px; padding: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); opacity: 0.9;">
-                    <div style="height: 10px; width: 50%; background: #95a5a6; margin-bottom: 20px; align-self:center;">
-                    </div>
-                    <div style="height: 6px; width: 90%; background: #7f8c8d; margin-bottom: 8px;"></div>
-                    <div style="height: 6px; width: 90%; background: #7f8c8d; margin-bottom: 15px;"></div>
-                    <div style="display:flex; gap:10px;">
-                        <div style="height: 50px; flex:1; background: #34495e;"></div>
-                        <div style="height: 50px; flex:1; background: #34495e;"></div>
-                    </div>
-                </div>
+            <div class="feature-visual" style="background: transparent; border: none; box-shadow: none;">
+                <img src="template2.png" alt="Executive Template"
+                    style="max-height: 100%; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
             </div>
         </div>
 
@@ -744,19 +711,27 @@
                     <li>Eliminates fluff to improve searchability</li>
                 </ul>
             </div>
-            <div class="feature-visual" style="border:none; background:transparent;">
-                <!-- Removed specific cards as requested -->
-                <div style="font-size: 4rem; text-align:center; opacity:0.2;">
-                    🧐
-                </div>
+            <div class="feature-visual" style="background: transparent; border: none; box-shadow: none;">
+                <img src="template3.png" alt="Job Board Audit"
+                    style="max-height: 100%; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
             </div>
         </div>
 
-        <div class="feature-card" style="margin-top: 4rem; text-align: center; border-color: var(--primary);">
-            <div class="feature-icon">🚀</div>
-            <h3>Advanced Model Power</h3>
-            <p>Every template includes options to use the most advanced logic available (powered by top-tier models like
-                Gemini Pro, GPT-4, etc.) for deep career strategy analysis and complex rewriting.</p>
+        <div
+            style="margin-top: 5rem; padding: 3rem; text-align: center; border: 1px solid rgba(167, 139, 250, 0.3); background: linear-gradient(180deg, rgba(167, 139, 250, 0.05), transparent); border-radius: 20px; position: relative; overflow: hidden;">
+            <div
+                style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.5), transparent);">
+            </div>
+            <div style="position: relative; z-index: 1;">
+                <h3
+                    style="font-size: 2rem; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #A78BFA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    Powered by Next-Gen AI</h3>
+                <p style="font-size: 1.1rem; line-height: 1.7; color: #d1d5db; max-width: 800px; margin: 0 auto;">
+                    Experience the latest in large language model technology. We continuously integrate the most capable
+                    models—including <strong>Gemini 1.5 Pro</strong> and <strong>GPT-4o</strong>—to ensure your career
+                    narrative is crafted with human-level reasoning and strategic depth.
+                </p>
+            </div>
         </div>
     </section>
 
