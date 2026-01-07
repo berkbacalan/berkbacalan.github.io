@@ -5,28 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ResuMate AI - Tailor Your CV to Specific Job Descriptions</title>
+
+    <meta name="apple-itunes-app" content="app-id=6756776160">
+
     <meta name="description"
-        content="AI-powered resume optimization designed to help you land your dream job. Match your CV to job descriptions with Google Gemini models.">
+        content="Land your dream job with ResuMate. AI-powered resume optimization that matches your CV to job descriptions using Google Gemini. Download for iOS.">
+    <meta name="keywords"
+        content="resume builder, ai resume, cv optimization, ats friendly resume, job interview, career feedback, google gemini">
+    <meta name="author" content="Berk Bacalan">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://berkbacalan.github.io/">
+    <meta property="og:title" content="ResuMate AI - Stop Guessing, Start Interviewing">
+    <meta property="og:description"
+        content="Use AI to tailor your resume for any job description. Get a higher match score and land more interviews.">
+    <meta property="og:image" content="https://berkbacalan.github.io/hero-social-card.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEVQ38XSG1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GEVQ38XSG1');
+    </script>
     <style>
         :root {
             --primary: #4FA1D8;
-            /* Light Blue-ish */
             --primary-dark: #2D6A9F;
             --accent: #A78BFA;
-            /* Purple */
             --dark-bg: #0B0E14;
             --card-bg: rgba(255, 255, 255, 0.05);
             --card-border: rgba(255, 255, 255, 0.1);
             --text-main: #FFFFFF;
             --text-secondary: #9CA3AF;
             --success: #10B981;
-            --warning: #F59E0B;
-            --danger: #EF4444;
             --glass-blur: blur(12px);
         }
 
@@ -64,7 +84,7 @@
             list-style: none;
         }
 
-        /* --- Animations --- */
+        /* Animations */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -91,25 +111,11 @@
             }
         }
 
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 5px rgba(79, 161, 216, 0.2);
-            }
-
-            50% {
-                box-shadow: 0 0 20px rgba(79, 161, 216, 0.5);
-            }
-
-            100% {
-                box-shadow: 0 0 5px rgba(79, 161, 216, 0.2);
-            }
-        }
-
         .fade-in {
             animation: fadeIn 0.8s ease-out forwards;
         }
 
-        /* --- Header --- */
+        /* Header */
         header {
             position: fixed;
             top: 0;
@@ -134,17 +140,14 @@
             width: 40px;
             height: 40px;
             border-radius: 8px;
-            /* Optional rounding */
         }
 
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
             background: linear-gradient(135deg, #FFF, #A78BFA);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         nav ul {
@@ -176,7 +179,7 @@
             border-color: var(--primary);
         }
 
-        /* --- Hero Section --- */
+        /* Hero */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -189,7 +192,6 @@
             overflow: hidden;
         }
 
-        /* Background Gradient Blob */
         .hero::before {
             content: '';
             position: absolute;
@@ -212,11 +214,9 @@
         }
 
         .hero h1 span {
-            color: var(--primary);
             background: linear-gradient(90deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .hero p {
@@ -233,6 +233,7 @@
             margin-bottom: 4rem;
         }
 
+        /* App Store Button Styling */
         .btn-primary {
             background: var(--primary);
             color: white;
@@ -241,6 +242,9 @@
             font-weight: 600;
             font-size: 1.1rem;
             box-shadow: 0 4px 15px rgba(79, 161, 216, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .btn-primary:hover {
@@ -248,45 +252,7 @@
             box-shadow: 0 6px 20px rgba(79, 161, 216, 0.6);
         }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            padding: 1rem 2rem;
-            border: 1px solid var(--card-border);
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Hero Image/Mockup Placeholder */
-        .hero-visual {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            height: 500px;
-            /* Placeholder height */
-            background: linear-gradient(180deg, rgba(30, 41, 59, 0.5), rgba(11, 14, 20, 0));
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            backdrop-filter: blur(5px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .hero-visual img {
-            max-width: 80%;
-            max-height: 80%;
-            border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        /* --- Sections Common --- */
+        /* Sections */
         section {
             padding: 5rem 2rem;
             max-width: 1200px;
@@ -308,7 +274,7 @@
             font-size: 1.1rem;
         }
 
-        /* --- Features Grid --- */
+        /* Features */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -339,17 +305,7 @@
             border-radius: 12px;
         }
 
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
-        }
-
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* --- Detailed Features --- */
+        /* Detailed Feature */
         .detailed-feature {
             display: flex;
             align-items: center;
@@ -370,34 +326,20 @@
             background: var(--card-bg);
             border-radius: 20px;
             height: 300px;
-            /* Placeholder */
             border: 1px solid var(--card-border);
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
-        .feature-content h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+        .feature-visual img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
         }
 
-        .feature-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.8rem;
-            color: var(--text-secondary);
-        }
-
-        .feature-list li::before {
-            content: '•';
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* --- Scoring Section --- */
+        /* Scoring */
         .scoring-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -414,25 +356,13 @@
         }
 
         .score-percentage {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
 
-        .score-label {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .score-desc {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-        }
-
-        /* --- Pricing/Tiers --- */
+        /* Pricing */
         .tiers-container {
             display: flex;
             justify-content: center;
@@ -468,16 +398,16 @@
             font-weight: 600;
         }
 
-        .tier-name {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
         .tier-credits {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
             color: var(--text-main);
+        }
+
+        .tier-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
         .tier-model {
@@ -487,9 +417,7 @@
             display: block;
         }
 
-
-
-        /* --- Footer --- */
+        /* Footer */
         footer {
             background: #05070a;
             padding: 4rem 2rem 2rem;
@@ -506,23 +434,9 @@
             gap: 3rem;
         }
 
-        .footer-logo {
-            flex: 1;
-            min-width: 250px;
-        }
-
         .footer-links {
             display: flex;
             gap: 4rem;
-        }
-
-        .footer-column h4 {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.8rem;
         }
 
         .footer-column ul li a {
@@ -542,7 +456,6 @@
             font-size: 0.9rem;
         }
 
-        /* --- Responsive --- */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -554,18 +467,12 @@
                 gap: 2rem;
             }
 
-            .tiers-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            header {
-                padding: 1rem;
-            }
-
             nav {
                 display: none;
-                /* Hide nav for simplicty in this v1 */
+            }
+
+            .header-btn {
+                display: none;
             }
         }
     </style>
@@ -573,7 +480,6 @@
 
 <body>
 
-    <!-- Header -->
     <header>
         <div class="logo-container">
             <img src="resumate_logo.png" alt="ResuMate Logo">
@@ -586,208 +492,133 @@
                 <li><a href="#pricing">Pricing</a></li>
             </ul>
         </nav>
-        <a href="https://apps.apple.com/us/app/resumate-ai-resume-builder/id6756776160" target="_blank"
-            class="btn-header">Download App</a>
+        <a href="https://apps.apple.com/us/app/resumate-ai-resume-builder/id6756776160" class="btn-header">Download
+            App</a>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="fade-in">
             <h1>Tailor Your CV to <br><span>Perfection with AI</span></h1>
-            <p>Optimize your resume for specific job descriptions using state-of-the-art AI technology. Get detailed
-                scoring, actionable feedback, and a perfectly tailored CV in seconds.</p>
+            <p>Don't let ATS algorithms reject your resume. Optimize your CV for specific job descriptions, get a match
+                score, and interview with confidence.</p>
+
             <div class="cta-group">
                 <a href="https://apps.apple.com/us/app/resumate-ai-resume-builder/id6756776160" target="_blank"
-                    class="btn-primary">Download on App Store</a>
+                    class="btn-primary">
+                    <svg viewBox="0 0 384 512" width="20" fill="white">
+                        <path
+                            d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-46.6-35.5-5.6-77.3 7.4-98.5 7.4-21.2 0-55-11-92-11-68.4 0-143.2 45-143.2 138 0 88.6 62.1 202.7 122.9 202.7 27.5 0 42.4-18.7 82.2-18.7 39.4 0 51.5 18.7 83.3 18.7 33.3 0 54.4-30.8 74.5-62.5 18.2-28.7 26-53.7 26.2-54.3-.4-.5-48.4-18.9-50.7-88.9zM248.6 105.4c-16.2-19.8-38.6-28.9-59.5-28.9-3.7 22.2 7.7 45.4 22.4 62.8 14.5 17.5 39.6 28 60 28 3.5-20.8-7.9-45.6-22.9-61.9z" />
+                    </svg>
+                    Download on App Store
+                </a>
             </div>
-
-
         </div>
     </section>
 
-    <!-- Core Features -->
     <section id="features">
         <div class="section-header">
-            <h2>Core Features</h2>
-            <p>Everything you need to land your next role.</p>
+            <h2>Why ResuMate?</h2>
+            <p>The only tool you need to beat the resume filters.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Secure & Private</h3>
-                <p>Social authentication via Google & Apple. Account management with full data deletion capabilities.
-                    Your data is yours.</p>
-            </div>
-            <div class="feature-card">
                 <div class="feature-icon">⚡</div>
                 <h3>Instant Optimization</h3>
-                <p>Get a fully optimized resume in seconds using our standard tier, or go deep with detailed career
-                    strategy analysis.</p>
+                <p>Upload your PDF and paste a Job Description. In seconds, get a match score and actionable advice.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3>Job Description Match</h3>
-                <p>Paste a job description or import from a URL. We analyze the gap between your resume and the target
-                    role.</p>
+                <div class="feature-icon">🔒</div>
+                <h3>Privacy First</h3>
+                <p>Sign in with Apple or Google. We use secure cloud functions. Delete your data anytime. No hidden
+                    catches.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🌐</div>
-                <h3>Global Support</h3>
-                <p>App interface available in 16 languages. Generate CVs, analysis, and feedback in <strong>any
-                        language</strong> supported by advanced AI models.</p>
+                <h3>16 Languages</h3>
+                <p>Applying globally? We support resume analysis and feedback in 16 different languages.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">📄</div>
-                <h3>PDF & Text Export</h3>
-                <p>Export your optimized resume as a clean, professionally formatted PDF or copy the text directly to
-                    your clipboard.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Native Experience</h3>
-                <p>Built with Flutter for a smooth, native iOS and Android experience. Apple Cupertino design
-                    aesthetics.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Templates Section -->
-    <section id="templates">
-        <div class="section-header">
-            <h2>Specialized Templates</h2>
-            <p>Choose the right workflow for your career goal.</p>
-        </div>
-
-        <div class="detailed-feature">
-            <div class="feature-content">
-                <h3>Minimalist</h3>
-                <p>A clean, ATS-friendly layout emphasizing skills and experience. Best for corporate, banking, and
-                    government roles where readability and keyword parsing are paramount.</p>
-                <ul class="feature-list" style="margin-top: 1.5rem;">
-                    <li>High ATS (Applicant Tracking System) compatibility</li>
-                    <li>Focus on quantifiable skills</li>
-                    <li>Clear, distraction-free structure</li>
-                </ul>
-            </div>
-            <div class="feature-visual" style="background: transparent; border: none; box-shadow: none;">
-                <img src="template1.png" alt="Minimalist Template"
-                    style="max-height: 100%; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
-            </div>
-        </div>
-
-        <div class="detailed-feature">
-            <div class="feature-content">
-                <h3>Executive</h3>
-                <p>Sophisticated design highlighting leadership and impact. Ideal for C-Level and Director roles where
-                    showing strategic value is key.</p>
-                <ul class="feature-list" style="margin-top: 1.5rem;">
-                    <li>Emphasis on Leadership & Strategy</li>
-                    <li>Premium aesthetics</li>
-                    <li>Impact-driven structure</li>
-                </ul>
-            </div>
-            <div class="feature-visual" style="background: transparent; border: none; box-shadow: none;">
-                <img src="template2.png" alt="Executive Template"
-                    style="max-height: 100%; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
-            </div>
-        </div>
-
-        <div class="detailed-feature">
-            <div class="feature-content">
+                <div class="feature-icon">🎯</div>
                 <h3>Job Board Audit</h3>
-                <p>Tailored analysis for your LinkedIn, Indeed, and Glassdoor profiles. We analyze your profile against
-                    recruiter search patterns to maximize visibility.</p>
-                <ul class="feature-list" style="margin-top: 1.5rem;">
-                    <li>Keyword density analysis</li>
-                    <li>"Critical Missing Info" detection</li>
-                    <li>Eliminates fluff to improve searchability</li>
-                </ul>
-            </div>
-            <div class="feature-visual" style="background: transparent; border: none; box-shadow: none;">
-                <img src="template3.png" alt="Job Board Audit"
-                    style="max-height: 100%; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
-            </div>
-        </div>
-
-        <div
-            style="margin-top: 5rem; padding: 3rem; text-align: center; border: 1px solid rgba(167, 139, 250, 0.3); background: linear-gradient(180deg, rgba(167, 139, 250, 0.05), transparent); border-radius: 20px; position: relative; overflow: hidden;">
-            <div
-                style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.5), transparent);">
-            </div>
-            <div style="position: relative; z-index: 1;">
-                <h3
-                    style="font-size: 2rem; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #A78BFA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                    Powered by Next-Gen AI</h3>
-                <p style="font-size: 1.1rem; line-height: 1.7; color: #d1d5db; max-width: 800px; margin: 0 auto;">
-                    Experience the latest in large language model technology. We continuously integrate the most capable
-                    models—including <strong>Gemini 1.5 Pro</strong> and <strong>GPT-4o</strong>—to ensure your career
-                    narrative is crafted with human-level reasoning and strategic depth.
+                <p>Paste your LinkedIn or Indeed profile text. Find out what critical keywords recruiters are missing.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Scoring & Analysis -->
-    <section id="scoring"
-        style="background: linear-gradient(180deg, transparent, rgba(79, 161, 216, 0.05), transparent);">
+    <section id="templates">
         <div class="section-header">
-            <h2>5-Dimensional Scoring</h2>
-            <p>Our AI evaluates your profile on five critical dimensions.</p>
+            <h2>Specialized Workflows</h2>
+            <p>Different goals require different strategies.</p>
         </div>
-        <div class="scoring-container">
-            <div class="score-card">
-                <div class="score-percentage">Skills</div>
-                <div class="score-desc">Keyword matching & technical proficiency</div>
+
+        <div class="detailed-feature">
+            <div class="feature-content">
+                <h3>The Minimalist</h3>
+                <p>Clean, parsed, and ready for business. This layout is designed specifically for <strong>Banking,
+                        Corporate, and Government</strong> roles where ATS readability is king.</p>
+                <ul class="feature-list" style="margin-top: 1.5rem;">
+                    <li>High ATS parsing success rate</li>
+                    <li>Focus on quantifiable skills</li>
+                    <li>Distraction-free structure</li>
+                </ul>
             </div>
-            <div class="score-card">
-                <div class="score-percentage">Experience</div>
-                <div class="score-desc">Relevance to target role</div>
+            <div class="feature-visual">
+                <img src="template1.png" alt="Minimalist Resume Template App Screen">
             </div>
-            <div class="score-card">
-                <div class="score-percentage">Impact</div>
-                <div class="score-desc">Quantifiable achievements (STAR Method)</div>
+        </div>
+
+        <div class="detailed-feature">
+            <div class="feature-content">
+                <h3>Job Board Optimizer</h3>
+                <p>Your LinkedIn profile is your 24/7 resume. We analyze it against recruiter search trends to ensure
+                    you appear in the right searches.</p>
+                <ul class="feature-list" style="margin-top: 1.5rem;">
+                    <li>Keyword density analysis</li>
+                    <li>"Critical Missing Info" detection</li>
+                    <li>Remove "fluff" to increase visibility</li>
+                </ul>
             </div>
-            <div class="score-card">
-                <div class="score-percentage">Education</div>
-                <div class="score-desc">Academic relevance</div>
+            <div class="feature-visual">
+                <img src="template3.png" alt="LinkedIn Profile Audit App Screen">
             </div>
-            <div class="score-card">
-                <div class="score-percentage">Culture</div>
-                <div class="score-desc">Soft skills & communication style</div>
-            </div>
+        </div>
+
+        <div
+            style="margin-top: 5rem; padding: 3rem; text-align: center; border: 1px solid rgba(167, 139, 250, 0.3); background: linear-gradient(180deg, rgba(167, 139, 250, 0.05), transparent); border-radius: 20px;">
+            <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #fff;">Powered by Google Gemini 2.0</h3>
+            <p style="font-size: 1.1rem; color: #d1d5db; max-width: 800px; margin: 0 auto;">
+                We don't use simple keyword matching. We use advanced LLMs to understand the <i>context</i> of your
+                career and the <i>intent</i> of the job description.
+            </p>
         </div>
     </section>
 
-    <!-- Pricing / Tiers -->
     <section id="pricing">
         <div class="section-header">
-            <h2>Credit Packs</h2>
-            <p>Flexible options for every career stage. No subscriptions.</p>
+            <h2>Simple Pricing</h2>
+            <p>Pay as you go. No subscriptions.</p>
         </div>
         <div class="tiers-container">
             <div class="tier-card">
-                <h3 class="tier-name">Starter Pack</h3>
+                <h3 class="tier-name">Starter</h3>
                 <div class="tier-credits">5 Credits</div>
                 <span class="tier-model">$1.99</span>
-
             </div>
             <div class="tier-card featured">
-                <div class="tier-badge">MOST POPULAR</div>
-                <h3 class="tier-name">Hunter Pack</h3>
+                <div class="tier-badge">BEST VALUE</div>
+                <h3 class="tier-name">Hunter</h3>
                 <div class="tier-credits">20 Credits</div>
                 <span class="tier-model">$4.99</span>
-
             </div>
             <div class="tier-card">
-                <h3 class="tier-name">Career Pack</h3>
+                <h3 class="tier-name">Career</h3>
                 <div class="tier-credits">50 Credits</div>
                 <span class="tier-model">$9.99</span>
-
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
@@ -797,18 +628,9 @@
                 </div>
                 <p style="color: var(--text-secondary); font-size: 0.9rem;">
                     Empowering job seekers with AI-driven resume optimization.
-                    Built with love by Berk Bacalan.
                 </p>
             </div>
             <div class="footer-links">
-                <div class="footer-column">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#templates">Templates</a></li>
-                    </ul>
-                </div>
                 <div class="footer-column">
                     <h4>Legal</h4>
                     <ul>
@@ -820,7 +642,7 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:support@resumate.app">Support</a></li>
-                        <li><a href="https://github.com/berkbacalan" target="_blank">GitHub</a></li>
+                        <li><a href="https://github.com/berkbacalan" target="_blank">Developer</a></li>
                     </ul>
                 </div>
             </div>
