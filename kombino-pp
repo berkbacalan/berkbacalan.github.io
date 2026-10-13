@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kombino Privacy Policy</title>
+</head>
+<body>
+  <h1>Kombino Privacy Policy</h1>
+  <p><strong>Last updated:</strong> October 13, 2026</p>
+
+  <p>
+    This Privacy Policy explains how Berk Bacalan (“Kombino”, “we”, “us”, or “our”)
+    collects, uses, stores, shares, and protects personal data when you use the
+    Kombino mobile application and related services.
+  </p>
+
+  <h2>1. Controller and Contact</h2>
+  <p>
+    The data controller is Berk Bacalan. For privacy requests, support, deletion
+    requests, or questions, contact us at: <a href="mailto:[CONTACT_EMAIL]">[CONTACT_EMAIL]</a>.
+  </p>
+
+  <h2>2. Information We Process</h2>
+  <ul>
+    <li>Account information supplied through Sign in with Apple, including your Firebase user identifier and, where Apple shares it, relay email address or display name.</li>
+    <li>Photos you choose to upload, including outfit, face, wardrobe, and style-profile photos.</li>
+    <li>Style information you provide, such as height, weight, preferences, occasions, written briefs, wardrobe items, and feedback.</li>
+    <li>AI-generated analysis results, recommendations, scores, saved looks, and history.</li>
+    <li>Purchase and credit information, including product identifiers, transaction references, and credit balance. Payment card details are handled by Apple and are not received or stored by Kombino.</li>
+    <li>Technical information necessary to operate and secure the service, such as app version, device language, diagnostic data, authentication data, App Check data, and service logs.</li>
+  </ul>
+
+  <h2>3. Facial and Image Data</h2>
+  <p>
+    Kombino may process photos containing your face, body, clothing, or other personal
+    characteristics solely to provide style, beauty, makeup, sunglasses, accessory, and
+    outfit recommendations requested by you. Kombino does not use uploaded photos to
+    identify you, perform identity verification, make legal, medical, employment,
+    insurance, credit, or similarly significant decisions, or create a facial-recognition
+    database.
+  </p>
+  <p>
+    Uploaded analysis images are stored in private server storage and associated with
+    your account so that your analysis history can be restored across devices. Access is
+    restricted using account-level controls and protected image links. Do not upload
+    photos of other people unless you have their permission.
+  </p>
+
+  <h2>4. Why We Use Information</h2>
+  <ul>
+    <li>To create, secure, restore, and administer your account.</li>
+    <li>To process your uploaded content and generate requested AI style analyses.</li>
+    <li>To maintain your analysis history, wardrobe, profile, and purchased credits.</li>
+    <li>To verify purchases, prevent fraud, secure the app, and enforce usage limits.</li>
+    <li>To respond to support requests and feedback.</li>
+    <li>To improve reliability, diagnose errors, and comply with legal obligations.</li>
+  </ul>
+
+  <h2>5. Legal Bases</h2>
+  <p>
+    Where applicable, we process personal data to perform our contract with you, with
+    your consent, for our legitimate interests in operating and protecting Kombino, and
+    where required to comply with legal obligations. You may withdraw consent where
+    consent is the applicable legal basis; this does not affect prior lawful processing.
+  </p>
+
+  <h2>6. AI Providers and Service Providers</h2>
+  <p>
+    We use vetted service providers to operate Kombino, including authentication,
+    database, hosting, crash/security infrastructure, purchase-management, and AI
+    processing providers. These providers process data only as necessary to provide their
+    services to us and under their applicable agreements and policies.
+  </p>
+  <p>
+    We do not intentionally use your uploaded photos or personal style data to train
+    Kombino-owned AI models. Third-party processing may be subject to the applicable
+    provider’s terms and privacy documentation.
+  </p>
+
+  <h2>7. Sharing</h2>
+  <p>
+    We do not sell your personal information. We may disclose information only to service
+    providers, where required by law, to protect rights and safety, in connection with a
+    merger or asset transfer, or with your express direction or consent.
+  </p>
+
+  <h2>8. International Transfers</h2>
+  <p>
+    Our providers may process information in countries other than your country of
+    residence. Where required, we use appropriate safeguards for international transfers.
+  </p>
+
+  <h2>9. Retention and Deletion</h2>
+  <p>
+    We retain account information, uploaded analysis images, results, and credit records
+    while your account remains active or as reasonably necessary to provide the service,
+    resolve disputes, prevent fraud, and meet legal obligations. You may request deletion
+    of your Kombino data by contacting us. Certain transaction, security, and legal
+    records may be retained where required or permitted by law.
+  </p>
+
+  <h2>10. Security</h2>
+  <p>
+    We use reasonable technical and organizational safeguards, including authenticated
+    access controls and private storage. No system, transmission, or storage method is
+    completely secure; you use the service at your own risk to the extent permitted by law.
+  </p>
+
+  <h2>11. Your Rights</h2>
+  <p>
+    Depending on your location, you may have rights to access, correct, delete, restrict,
+    object to processing, withdraw consent, receive a portable copy of your data, or lodge
+    a complaint with a data-protection authority. Submit requests through the contact
+    information above. We may need to verify your identity before responding.
+  </p>
+
+  <h2>12. Children</h2>
+  <p>
+    Kombino is not intended for children under 13, or under the minimum age required in
+    their jurisdiction. Do not use Kombino if you do not meet the applicable minimum age.
+  </p>
+
+  <h2>13. Third-Party Links</h2>
+  <p>
+    Kombino may link to third-party services. We are not responsible for their content,
+    security, or privacy practices.
+  </p>
+
+  <h2>14. Changes</h2>
+  <p>
+    We may update this Privacy Policy from time to time. The updated version will be
+    posted in the app or on this page with a revised “Last updated” date. Continued use
+    after an update means you acknowledge the updated policy to the extent permitted by law.
+  </p>
+
+  <h2>15. Contact</h2>
+  <p>
+    Privacy questions: <a href="mailto:[CONTACT_EMAIL]">[CONTACT_EMAIL]</a>
+  </p>
+</body>
+</html>
